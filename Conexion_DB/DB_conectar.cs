@@ -68,7 +68,7 @@ namespace Conexion_DB
         }
     
     
-
+        //Metodo agregar
 
         public  void agregar(Articulos nuevo)
         {
@@ -106,7 +106,7 @@ namespace Conexion_DB
 
         }
 
-
+        //Metodo Modificar
         public void modificar(Articulos arti)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -134,7 +134,7 @@ namespace Conexion_DB
 
         }
 
-
+        //metodo eliminar
         public void eliminar( int id)
         {
             try
