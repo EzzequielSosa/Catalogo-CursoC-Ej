@@ -36,21 +36,16 @@ namespace ArticulosTecnologia
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void form_Catalogo_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Bienvenido a la APP!!");
-
-            
-            
-
-
-        }
-
+            cargar();
        
+        }
 
         private void cargarImagen(string imagen)
         {
@@ -66,15 +61,25 @@ namespace ArticulosTecnologia
         }
         private void dataGridViewListaArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridViewListaArticulos.CurrentRow != null)
+            try
             {
-                Articulos seleccionado = (Articulos)dataGridViewListaArticulos.CurrentRow.DataBoundItem;
-              cargarImagen(seleccionado.Imagenurl);
+                if (dataGridViewListaArticulos.CurrentRow != null)
+                {
+                    Articulos seleccionado = (Articulos)dataGridViewListaArticulos.CurrentRow.DataBoundItem;
+                    cargarImagen(seleccionado.Imagenurl);
+                }
+
+
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+
         }
-
-
-
 
 
         private void dataGridViewListaArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -84,7 +89,7 @@ namespace ArticulosTecnologia
 
         private void buttonVerLista_Click(object sender, EventArgs e)
         {
-            cargar();
+            
             
                 
 
